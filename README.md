@@ -90,7 +90,7 @@ web_internal_ip = "10.0.2.15"
 
 Для получения сводной информации о виртуальных машинах создан единый output `vms_info`, который возвращает массив объектов с полями: `instance_name`, `external_ip`, `fqdn` для каждой ВМ.
 
-![ВМ в Yandex Cloud с внешним IP](images/yc-vm-external-ip.png)
+![terraform](terraform_.png)
 
 
 ### Вывод `terraform output vms_info`
@@ -135,23 +135,10 @@ output "vms_info" {
 
 ```
 
-## Задание 5: Имена ВМ через locals с интерполяцией
-
-![ВМ в Yandex Cloud с внешним IP](images/yc-vm-external-ip.png)
-
-В файле `locals.tf` создан единый блок `locals`, где имена виртуальных машин формируются через интерполяцию из нескольких входных переменных:
-
-```hcl
-locals {
-  web_vm_name = "${var.vm_prefix}-develop-${var.vm_type_web}"
-  db_vm_name  = "${var.vm_prefix}-develop-${var.vm_type_db}"
-}
-```
-
 
 ## Задание 5: Имена ВМ через locals и приведение конфигурации к корректному виду
 
-![ВМ в Yandex Cloud с внешним IP](images/yc-vm-external-ip.png)
+![vms info](vms_info.png)
 
 ### Цель задания
 
@@ -172,7 +159,7 @@ locals {
 
 ## Задание 6: Структурированные map-переменные для ресурсов и metadata
 
-![ВМ в Yandex Cloud с внешним IP](images/yc-vm-external-ip.png)
+![terraform validate](terraform_validate.png)
 
 ### Цель задания
 
