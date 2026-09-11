@@ -40,7 +40,7 @@ core_fraction = 5 — означает, что ВМ получает гаран�
 ssh -i ~/.ssh/id_ed25519 ubuntu@84.201.153.82
 ```
 
-![ВМ в Yandex Cloud с IP](terraform_plan.png)
+![terraform plan](terraform_plan.png)
 
 ## Проверка конфигурации (terraform plan)
 
@@ -72,7 +72,9 @@ Terraform has compared your real infrastructure against your configuration and f
 | Внешний IP | `158.160.31.142` | — | Назначен только веб‑ВМ |
 | Внутренний IP | `10.0.2.15` | `10.0.2.11` | В одной подсети — возможна сетевая связность |
 
-![ВМ в Yandex Cloud с внешним IP](images/yc-vm-external-ip.png)
+![terraform output](terraform_output.png)
+
+![Две ВМ в Yandex Cloud](db_web.png)
 
 ### Подтверждение выходных параметров Terraform
 
