@@ -40,7 +40,7 @@ core_fraction = 5 — означает, что ВМ получает гаран�
 ssh -i ~/.ssh/id_ed25519 ubuntu@84.201.153.82
 ```
 
-![ВМ в Yandex Cloud с внешним IP](images/yc-vm-external-ip.png)
+![terraform plan](terraform plan.png)
 
 ## Проверка конфигурации (terraform plan)
 
