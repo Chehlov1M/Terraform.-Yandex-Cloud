@@ -1,7 +1,12 @@
 ## Задание 1: Подтверждение внешнего IP-адреса
 
 ### Скриншот ВМ в консоли Yandex Cloud
-![ВМ в Yandex Cloud с внешним IP](images/yc-vm-external-ip.png)
+
+![ВМ в Yandex Cloud с IP](external_ip.png)
+
+![ВМ в Yandex Cloud с IP](platform_web.png)
+
+![ВМ в Yandex Cloud с IP](uname_a.png)
 
 *На скриншоте: ВМ `netology-develop-platform-web`, статус `RUNNING`, внешний IP `84.201.153.82`.*
 
