@@ -5,11 +5,14 @@
 
 *На скриншоте: ВМ `netology-develop-platform-web`, статус `RUNNING`, внешний IP `84.201.153.82`.*
 
-#Исправление ошибок и запуск
-Две намеренные ошибки
-#	Где	В чём суть	Исправление
-1	platform_id = "standart-v4"	Опечатка: standart вместо standard, плюс версии v4 не существует в YC	platform_id = "standard-v3"
-2	cores = 1	Для платформы standard-v1 минимум 2 ядра. YC вернёт ошибку: the specified number of cores is not available	cores = 2
+### Исправление ошибок и запуск
+
+### Намеренно допущенные ошибки и их исправление
+
+| № | Где | В чём суть ошибки | Исправление |
+|---|-----|-------------------|-------------|
+| 1 | `platform_id = "standart-v4"` | Опечатка в слове `standart` (правильно — `standard`). Кроме того, платформы `v4` не существует в Yandex Cloud. Провайдер вернёт ошибку валидации или API-ошибку при создании ВМ. | `platform_id = "standard-v3"` |
+| 2 | `cores = 1` (для платформы `standard-v3`) | Для платформы `standard-v3` минимальное количество ядер — 2. Yandex Cloud отклонит запрос с ошибкой вида: *the specified number of cores is not available*. | `cores = 2` |
 
 Ошибки проявляются только на этапе terraform apply — terraform validate их не ловит, потому что синтаксис HCL корректен, а вот значения не проходят валидацию на стороне API Yandex Cloud.
 Зачем в процессе обучения нужны preemptible = true и core_fraction = 5
