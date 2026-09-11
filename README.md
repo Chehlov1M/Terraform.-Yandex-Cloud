@@ -65,7 +65,7 @@ Terraform has compared your real infrastructure against your configuration and f
 | Preemptible | `true` | `true` | Обе прерываемые (дешевле, для лаб подходит) |
 | Зона | `ru-central1-b` | `ru-central1-b` | Одна подсеть, единая зона доступности |
 | Внешний IP | `158.160.31.142` | — | Назначен только веб‑ВМ |
-| Внутренний IP | `10.0.2.15` | (см. консоль) | В одной подсети — возможна сетевая связность |
+| Внутренний IP | `10.0.2.15` | `10.0.2.11` | В одной подсети — возможна сетевая связность |
 
 ![ВМ в Yandex Cloud с внешним IP](images/yc-vm-external-ip.png)
 
