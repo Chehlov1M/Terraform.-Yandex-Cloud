@@ -79,4 +79,22 @@ terraform apply
 - `web-2`: `epdhrhaoh6ruirfcj6co`
 - `replica`: `epdpvmsfna8u09f31ivg`
 
+## Задание 3: диски и ВМ storage
+
+![Диски и ВМ](disk.png)
+
+В рамках задания были созданы:
+- 3 дополнительных диска по 1 ГБ (`disk-0`, `disk-1`, `disk-2`).
+- Одна ВМ `storage` с подключением всех дисков через `dynamic secondary_disk`.
+
+### Параметры ВМ
+
+| Параметр | Значение |
+| --- | --- |
+| Имя | `storage` |
+| Зона | `ru-central1-b` |
+| vCPU | 2 |
+| RAM | 2 ГБ |
+| Тип дисков | `network-hdd` |
+| Количество вторичных дисков | 3 |
 
