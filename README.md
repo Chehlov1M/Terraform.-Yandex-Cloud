@@ -44,3 +44,39 @@ terraform apply
 
 ## Задание 2. Создание ВМ через count и for_each
 
+![Команда: yc compute instance list](state_list.png)
+
+![ВМ в Yandex Cloud](BM.png)
+
+# Развёрнутая инфраструктура (Yandex Cloud)
+
+В рамках задания были созданы 4 виртуальные машины в зоне доступности `ru-central1-b`. Все ВМ являются **прерываемыми** (preemptible) с долей vCPU 20%, что снижает стоимость использования для учебных целей.
+
+## Список ресурсов
+
+| Имя ВМ | Статус | Публичный IPv4 | Внутренний IPv4 | RAM | vCPU | Размер диска | Платформа | Тип ВМ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `main` | Running | — | `10.0.2.5` | 2 ГБ | 2 | 5 ГБ | Intel Broadwell | Прерываемая (20% vCPU) |
+| `web-1` | Running | `89.169.188.227` | `10.0.2.17` | 1 ГБ | 2 | 5 ГБ | Intel Broadwell | Прерываемая (20% vCPU) |
+| `web-2` | Running | `46.243.211.6` | `10.0.2.8` | 1 ГБ | 2 | 5 ГБ | Intel Broadwell | Прерываемая (20% vCPU) |
+| `replica` | Running | — | `10.0.2.32` | 4 ГБ | 4 | 10 ГБ | Intel Broadwell | Прерываемая (20% vCPU) |
+
+## Соответствие ресурсам Terraform
+
+| Логическое имя (Terraform) | Имя ВМ в Yandex Cloud | Назначение |
+| :--- | :--- | :--- |
+| `yandex_compute_instance.db["main"]` | `main` | Основная база данных |
+| `yandex_compute_instance.db["replica"]` | `replica` | Реплика базы данных |
+| `yandex_compute_instance.web` | `web-1` | Веб‑сервер №1 |
+| `yandex_compute_instance.web` | `web-2` | Веб‑сервер №2 |
+
+## Идентификаторы ресурсов (для проверки)
+
+Для подтверждения, что инфраструктура создана именно через Terraform, ниже приведены ID экземпляров:
+
+- `main`: `epd19mp93r6ao1gf7muo`
+- `web-1`: `epdfsvanqtlnql63feqt`
+- `web-2`: `epdhrhaoh6ruirfcj6co`
+- `replica`: `epdpvmsfna8u09f31ivg`
+
+
