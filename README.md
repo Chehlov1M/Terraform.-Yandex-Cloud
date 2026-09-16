@@ -40,3 +40,7 @@ terraform init -upgrade
 terraform validate
 terraform plan
 terraform apply
+```
+
+## Задание 2. Создание ВМ через count и for_each
+
