@@ -100,8 +100,6 @@ terraform apply
 
 ## Задание 4. Генерация Ansible-инвентаря через Terraform
 
-![Сгенерированный файл `inventory`](cat_inventory.png)
-
 **Цель задания:**  
 Отработать работу с управляющими конструкциями Terraform, шаблонизатором `templatefile` и встроенными ресурсами. Сгенерировать динамический Ansible-инвентарь (`inventory`) на основе данных о виртуальных машинах в Yandex Cloud.
 
@@ -110,3 +108,4 @@ terraform apply
 Сгенерирован файл `inventory`, содержащий три группы хостов: `webservers`, `databases`, `storage`.  
 Пример содержимого (актуальные IP и FQDN подставляются автоматически):
 
+![Сгенерированный файл `inventory`](cat_inventory.png)
