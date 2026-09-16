@@ -79,7 +79,7 @@ terraform apply
 - `web-2`: `epdhrhaoh6ruirfcj6co`
 - `replica`: `epdpvmsfna8u09f31ivg`
 
-## Задание 3: диски и ВМ storage
+## Задание 3. Диски и ВМ storage
 
 ![Диски и ВМ](disk.png)
 
@@ -97,4 +97,16 @@ terraform apply
 | RAM | 2 ГБ |
 | Тип дисков | `network-hdd` |
 | Количество вторичных дисков | 3 |
+
+## Задание 4. Генерация Ansible-инвентаря через Terraform
+
+![Сгенерированный файл `inventory`](cat_inventory.png)
+
+**Цель задания:**  
+Отработать работу с управляющими конструкциями Terraform, шаблонизатором `templatefile` и встроенными ресурсами. Сгенерировать динамический Ansible-инвентарь (`inventory`) на основе данных о виртуальных машинах в Yandex Cloud.
+
+## Результат выполнения
+
+Сгенерирован файл `inventory`, содержащий три группы хостов: `webservers`, `databases`, `storage`.  
+Пример содержимого (актуальные IP и FQDN подставляются автоматически):
 
